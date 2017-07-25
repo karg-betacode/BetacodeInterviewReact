@@ -9,7 +9,9 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  Alert
 } from 'react-native';
 
 import { NativeModules } from 'react-native';
@@ -29,8 +31,18 @@ export default class AwesomeProject2 extends Component {
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
         </Text>
+        <Button onPress={this.doSomething} title="Learn More" color="#841584" />
       </View>
     );
+  }
+
+  constructor(props) {
+    super(props)
+    this.doSomething = this.doSomething.bind(this)
+  }
+
+  doSomething(){
+    Alert.alert("My action called")
   }
 }
 
